@@ -17,7 +17,14 @@ struct ContentView: View {
     )
     var body: some View {
         VStack {
+            MapReader { proxy in
             Map(initialPosition: startPosition)
+                .onTapGesture { position in
+                    if let coordinate = proxy.convert(position, from: .local) {
+                        print("Tapped at \(position)")
+                    }
+                }
+            }
         }
         .padding()
     }
