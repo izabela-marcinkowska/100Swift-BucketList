@@ -9,12 +9,14 @@
 /* Begin PBXBuildFile section */
 		17F0746F2CECB56700FEF9A7 /* editView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F0746E2CECB56700FEF9A7 /* editView.swift */; };
 		17F074712CECC89500FEF9A7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F074702CECC89500FEF9A7 /* Result.swift */; };
+		17F074862CEDECF000FEF9A7 /* ContentView-ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F074852CEDECF000FEF9A7 /* ContentView-ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		17F074592CEB526900FEF9A7 /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17F0746E2CECB56700FEF9A7 /* editView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editView.swift; sourceTree = "<group>"; };
 		17F074702CECC89500FEF9A7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		17F074852CEDECF000FEF9A7 /* ContentView-ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView-ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -39,6 +41,7 @@
 		17F074502CEB526900FEF9A7 = {
 			isa = PBXGroup;
 			children = (
+				17F074852CEDECF000FEF9A7 /* ContentView-ViewModel.swift */,
 				17F0746E2CECB56700FEF9A7 /* editView.swift */,
 				17F074702CECC89500FEF9A7 /* Result.swift */,
 				17F0745B2CEB526900FEF9A7 /* BucketList */,
@@ -128,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17F074862CEDECF000FEF9A7 /* ContentView-ViewModel.swift in Sources */,
 				17F074712CECC89500FEF9A7 /* Result.swift in Sources */,
 				17F0746F2CECB56700FEF9A7 /* editView.swift in Sources */,
 			);
