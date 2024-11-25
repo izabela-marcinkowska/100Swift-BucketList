@@ -16,7 +16,7 @@ extension ContentView {
         private(set) var locations: [Location]
         var selectedPlace: Location?
         let savePath = URL.documentsDirectory.appending(path: "SavedPlaces")
-        var isUnlocked = false
+        var isUnlocked = true
         
         func addLocation(at point: CLLocationCoordinate2D) {
             let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: point.latitude, longitude: point.longitude)
