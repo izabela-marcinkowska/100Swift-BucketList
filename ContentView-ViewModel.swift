@@ -16,7 +16,8 @@ extension ContentView {
         private(set) var locations: [Location]
         var selectedPlace: Location?
         let savePath = URL.documentsDirectory.appending(path: "SavedPlaces")
-        var isUnlocked = true
+        var isUnlocked = false
+        var errorMessage: String?
         
         func addLocation(at point: CLLocationCoordinate2D) {
             let newLocation = Location(id: UUID(), name: "New location", description: "", latitude: point.latitude, longitude: point.longitude)
@@ -59,14 +60,16 @@ extension ContentView {
                 let reason = "Please authenticate yourself to unlock your places"
                 
                 context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
-                    if success {
-                        self.isUnlocked = true
-                    } else {
-                        // error
+                    DispatchQueue.main.async { // Ensure UI updates happen on the main thread
+                        if success {
+                            self.isUnlocked = true
+                        } else {
+                            self.errorMessage = authenticationError?.localizedDescription ?? "Authentication failed"
+                        }
                     }
                 }
             } else {
-                // no biometrics
+                self.errorMessage = error?.localizedDescription ?? "Biometric authentication not available"
             }
         }
     }

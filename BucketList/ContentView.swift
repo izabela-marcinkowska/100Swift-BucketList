@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var viewModel = ViewModel()
     @State private var mapMode: MapStyle = .standard
     @State private var showingConfirmationAlert = false
+    @State private var showingErrorAlert = false
     
     let startPosition = MapCameraPosition.region(
         MKCoordinateRegion(
@@ -77,6 +78,13 @@ struct ContentView: View {
                 .background(.blue)
                 .foregroundStyle(.white)
                 .clipShape(.capsule)
+                .alert("Authentication Failed", isPresented: $showingErrorAlert) {
+                    Button("OK", role: .cancel) {
+                        viewModel.errorMessage = nil
+                    }
+                } message: {
+                    Text(viewModel.errorMessage ?? "An unknown error occurred.")
+                }
         }
     }
 }
